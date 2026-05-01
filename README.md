@@ -1,4 +1,4 @@
-# ESP32 AWS IoT Boilerplate
+# Micropython AWS IoT Boilerplate
 A project built for enabling ESP32 with Micropython to connect to AWS Iot Core.
 
 # Getting ready
@@ -26,6 +26,12 @@ creds/cert.pem.crt
 Please create `secret_configs.py` file.
 This file is designed to he excluded from the Git repository for security purposes and some configs are machine-specific.
 The correct schema of the file can be found in `secret_configs_template.txt`
+#### Why using `.py` file instead of the more common `.env` file to store secrets?
+On the ESP32 with MicroPython, it is significantly more common and practical to store secrets in a dedicated .py file that is excluded from your repository.
+<br>
+While .env files are the standard for desktop and web development, they are less common in the MicroPython ecosystem because they require additional libraries to parse, which consumes limited memory.
+<br>
+The `secret_configs.py` file here has already been added to the `.gitignore` file and will be excluded from Git's tracking.
 
 ## Install libraries
 Please replace `xxx` placeholders below with real WiFi SSID and password.
@@ -48,4 +54,4 @@ Run `demo.py` file. then go to AWS IoT Console and use "MQTT Test Client" to pub
 Runtime logs can be inspected through debug console of your IDE. Additionally, any errors will be logged to a file in `runtime_logs` directory.
 
 # Ready to go live?
-Any code in `boot.py` and `main.py` file will run automatically after boot up. You can put your code in these files and reboot your device.
+Any code in `boot.py` and `main.py` file will run automatically after boot up. You can put your code in `main.py` file and reboot your device.
