@@ -163,6 +163,5 @@ cython_debug/
 micropython-stubs/
 secret_configs.py
 creds/*
-runtime_logs/*
 temp/*
 !.gitkeep
