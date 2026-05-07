@@ -7,8 +7,8 @@ import time
 
 import ujson
 
-from mqtt import Mqtt
-from settings import (AWS_CERT_FILE, AWS_IOT_ENDPOINT, AWS_PRIVATE_KEY_FILE,
+from utils.mqtt import Mqtt
+from settings import (AWS_DEVICE_CERT_FILE, AWS_ROOT_CA_FILE, AWS_IOT_ENDPOINT, AWS_PRIVATE_KEY_FILE,
                       MQTT_CHECK_MESSAGE_INTERVAL, MQTT_CLIENT_ID,
                       MQTT_KEEPALIVE, MQTT_PING_INTERVAL, MQTT_PORT,
                       MQTT_TOPIC, WIFI_PWD, WIFI_SSID, logger)
@@ -31,20 +31,20 @@ while True:
         while True:
             logger.info('Attempting to connect to MQTT')
             mqtt = Mqtt(
-                cert_file_path=AWS_CERT_FILE,
+                root_ca_file_path=AWS_ROOT_CA_FILE,
+                device_cert_file_path=AWS_DEVICE_CERT_FILE,
                 private_key_file_path=AWS_PRIVATE_KEY_FILE,
-                callback=callback_func,
                 client_id=MQTT_CLIENT_ID,
                 keepalive=MQTT_KEEPALIVE,
                 mqtt_endpoint=AWS_IOT_ENDPOINT,
                 mqtt_port=MQTT_PORT,
-                topic=MQTT_TOPIC,
+                topics=[MQTT_TOPIC],
+                callback=callback_func
             )
+
             if not mqtt.is_connected():
                 time.sleep(2)
                 continue
-
-            logger.info('Connected to MQTT')
 
             # initialize last pinged time
             last_pinged = time.time()

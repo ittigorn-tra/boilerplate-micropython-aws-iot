@@ -10,17 +10,20 @@ You can download Micropython from [Micropython download page](https://micropytho
 
 # Setting up for the first time
 ## Copy or create files and derectories to your device
-Please make sure you have copied or created all files and directories in this project to your device, including empty directories such as `runtime_logs`
+Please make sure you have copied or created all `.py` files in this project to your device.
 
 ## Create and populate necessary files not included in this repo
 Please make sure you have created all the files below brefore attempting to run the code.
 
 ### Certificate and private key file
-Please create a "thing" in AWS IoT Core and create the files below in your ESP32 device. 
+Please create a "thing" in AWS IoT Core and download the necessary files below from AWS once the setup is completed.
 ```
+creds/device_cert.pem.crt
 creds/private.pem.key
-creds/cert.pem.crt
+creds/AmazonRootCA1.cer
 ```
+#### About `.cer` file type for `AmazonRootCA1.cer`
+This project is setup to use `.cer` type of RootCA certificate file since it's more memory-efficient than the plain-text `.pem` file. The certificate is publicly available and can be downloaded via [Amazon Trust Services's repository](https://www.amazontrust.com/repository/) under "Root CAs" section, click to download the "DER" version of "CN=Amazon Root CA 1,O=Amazon,C=US".
 
 ### Secret configs
 Please create `secret_configs.py` file.
@@ -51,9 +54,6 @@ This code will keep checking for any MQTT message every 0.5 second and print any
 
 # Testing
 Run `demo.py` file. then go to AWS IoT Console and use "MQTT Test Client" to publish a message to the topic you specified in your `secret_configs.py` file.
-
-# Inspecting runtime logs
-Runtime logs can be inspected through debug console of your IDE. Additionally, any errors will be logged to a file in `runtime_logs` directory.
 
 # Ready to go live?
 Any code in `boot.py` and `main.py` file will run automatically after boot up. You can put your code in `main.py` file and reboot your device.
