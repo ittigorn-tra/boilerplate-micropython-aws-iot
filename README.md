@@ -23,7 +23,10 @@ creds/private.pem.key
 creds/AmazonRootCA1.cer
 ```
 #### About `.cer` file type for `AmazonRootCA1.cer`
-This project is setup to use `.cer` type of RootCA certificate file since it's more memory-efficient than the plain-text `.pem` file. The certificate is publicly available and can be downloaded via [Amazon Trust Services's repository](https://www.amazontrust.com/repository/) under "Root CAs" section, click to download the "DER" version of "CN=Amazon Root CA 1,O=Amazon,C=US".
+This project is setup to use `.cer` type of RootCA certificate file since it's more memory-efficient than the plain-text `.pem` file.
+<br>
+<br>
+The certificate is publicly available and can be downloaded via [Amazon Trust Services's repository](https://www.amazontrust.com/repository/) under "Root CAs" section, click to download the "DER" version of "CN=Amazon Root CA 1,O=Amazon,C=US".
 
 ### Secret configs
 Please create `secret_configs.py` file.
@@ -37,17 +40,6 @@ While .env files are the standard for desktop and web development, they are less
 <br>
 <br>
 The `secret_configs.py` file here has already been added to the `.gitignore` file and will be excluded from Git's tracking.
-
-## Install libraries
-Please replace `xxx` placeholders below with real WiFi SSID and password.
-```python
-import mip
-from wlan import Wlan
-
-Wlan(ssid='xxx', pwd='xxx').connect()
-
-mip.install('logging')
-```
 
 # Expected behavior
 This code will keep checking for any MQTT message on the socket print any message that comes in.
