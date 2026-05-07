@@ -50,7 +50,7 @@ mip.install('logging')
 ```
 
 # Expected behavior
-This code will keep checking for any MQTT message every 0.5 second and print any message that comes in. It will also send ping signal to the broker every 35 seconds to keep the connection active.
+This code will keep checking for any MQTT message on the socket print any message that comes in.
 
 # Testing
 Run `demo.py` file. then go to AWS IoT Console and use "MQTT Test Client" to publish a message to the topic you specified in your `secret_configs.py` file.
