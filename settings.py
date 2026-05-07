@@ -1,7 +1,5 @@
-import sys
-
 import secret_configs
-from logger import Logger
+from utils.logger import Logger
 
 
 ENVIRONMENT = secret_configs.ENVIRONMENT
@@ -19,7 +17,8 @@ MQTT_CHECK_MESSAGE_INTERVAL = 0.5
 MQTT_PING_INTERVAL = 35
 
 # CREDENTIALS SETUP
-AWS_CERT_FILE = secret_configs.AWS_CERT_FILE
+AWS_ROOT_CA_FILE = secret_configs.AWS_ROOT_CA_FILE
+AWS_DEVICE_CERT_FILE = secret_configs.AWS_DEVICE_CERT_FILE
 AWS_PRIVATE_KEY_FILE = secret_configs.AWS_PRIVATE_KEY_FILE
 
 # LOGGING SETUP
