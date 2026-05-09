@@ -26,7 +26,7 @@ creds/AmazonRootCA1.cer
 This project is setup to use `.cer` type of RootCA certificate file since it's more memory-efficient than the plain-text `.pem` file.
 <br>
 <br>
-The certificate is publicly available and can be downloaded via [Amazon Trust Services's repository](https://www.amazontrust.com/repository/) under "Root CAs" section, click to download the "DER" version of "CN=Amazon Root CA 1,O=Amazon,C=US".
+The certificate is publicly available and can be downloaded via [Amazon Trust Services' repository](https://www.amazontrust.com/repository/) under "Root CAs" section, click to download the "DER" version of "CN=Amazon Root CA 1,O=Amazon,C=US".
 
 ### Secret configs
 Please create `secret_configs.py` file.
