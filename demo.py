@@ -23,13 +23,13 @@ def callback_func(topic, msg):
 # Connect to WiFi
 while True:
     try:
-        logger.info('Attempting to connect to WiFi')
+        # attempt to connect to wifi
         wlan = Wlan(ssid=WIFI_SSID, pwd=WIFI_PWD)
         wlan.connect()
 
         # mqtt connect
         while True:
-            logger.info('Attempting to connect to MQTT')
+            # attempt to connect to mqtt
             mqtt = Mqtt(
                 root_ca_file_path=AWS_ROOT_CA_FILE,
                 device_cert_file_path=AWS_DEVICE_CERT_FILE,
