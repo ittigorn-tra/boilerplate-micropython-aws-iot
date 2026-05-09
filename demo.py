@@ -12,7 +12,7 @@ from settings import (AWS_DEVICE_CERT_FILE, AWS_ROOT_CA_FILE, AWS_IOT_ENDPOINT, 
                       MQTT_CHECK_MESSAGE_INTERVAL, MQTT_CLIENT_ID,
                       MQTT_KEEPALIVE, MQTT_PING_INTERVAL, MQTT_PORT,
                       MQTT_TOPIC, WIFI_PWD, WIFI_SSID, logger)
-from wlan import Wlan
+from utils.wlan import Wlan
 
 
 def callback_func(topic, msg):
