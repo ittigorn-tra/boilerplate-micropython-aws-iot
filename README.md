@@ -1,5 +1,6 @@
 # Micropython AWS IoT Boilerplate
-A project built for enabling ESP32 with Micropython to connect to AWS Iot Core.
+A project built for enabling ESP32 with Micropython to connect to AWS Iot Core.<br>
+See the full article on how to set this up [here](https://medium.com/@ittigorn/connecting-esp32-micropython-to-aws-iot-core-0c108720330a)
 
 # Getting ready
 ## Choose your IDE
